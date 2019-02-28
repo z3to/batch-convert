@@ -4,11 +4,16 @@
       <a href="http://convert.zeto.io/time" rel="self"><h1>Timestamp Converter</h1></a>
       <p>Put in a list of dates separated by linebreaks. You can change the input and output format manually or select from the examples. Tokens are similar to the LDML format. A list of available tokens can be found here: <a href="http://momentjs.com/docs/#/displaying/format/">momentjs.com/docs/#/displaying/format</a></p>
     </header>
-    <Options
-      :iFormats="formatsInput"
-      :oFormats="formatsOutput"
-      v-on:updateIFormat="iFormat = $event"
-      v-on:updateOFormat="oFormat = $event" />
+    <aside class="page-options">
+      <Option
+        label="Input format"
+        :formats="formatsInput"
+        v-on:updateFormat="iFormat = $event" />
+      <Option
+        label="Output format"
+        :formats="formatsOutput"
+        v-on:updateFormat="oFormat = $event" />
+    </aside>
     <IO
       :compiledList="compiledList"
       :sample="sample"
@@ -18,7 +23,7 @@
 
 <script>
   import IO from '~/components/IO.vue'
-  import Options from '~/components/Options.vue'
+  import Option from '~/components/Option.vue'
   import { convertList } from '~/assets/scripts/utils.js'
   import moment from 'moment'
   import isNull from 'lodash/isNull'
@@ -67,7 +72,7 @@
     },
     components: {
       IO,
-      Options
+      Option
     }
   }
 </script>
