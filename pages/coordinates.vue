@@ -20,25 +20,24 @@
   import IO from '~/components/IO.vue'
   import Options from '~/components/Options.vue'
   import { convertList } from '~/assets/scripts/utils.js'
-  import moment from 'moment'
+  import parseDMS from 'parse-dms'
+  import formatcoords from 'formatcoords'
   import isNull from 'lodash/isNull'
 
-  const sample = '12.08.2015\n12.08.1015'
+  const sample = 'N51° 30\' 0.5486" W0° 7\' 34.4503"\n51°30\'0.5486" -0°7\'34.4503"\n0°7\'34.4503"W 51°30\'0.5486"N\n51:30:0.5486N 0:7:34.4503W\nN51° 30\' 0.5486\'\' W0° 7\' 34.4503\'\'\nN51° 30.009143333333\' W0° 7.574171666666667\'\n51.500152388888885,-0.12623619444444445\n51.500152388888885 -0.12623619444444445'
 
   const formatsInput = [
-    { text: 'DD.MM.YYYY', value: 'DD.MM.YYYY' },
-    { text: 'MM.DD.YYYY', value: 'MM.DD.YYYY' },
-    { text: 'MM.DD.YY', value: 'MM.DD.YY' },
-    { text: 'YYYY.MM.DD', value: 'YYYY.MM.DD' },
-    { text: 'DD.MM.YYYY hh:mm:ss', value: 'DD.MM.YYYY hh:mm:ss' }
+    { text: '-36.01011 -2.34856', value: 'fromDecimalArray' },
+    { text: '36º 00.607\' S 002º 20.914\' W', value: 'fromDecimalString' },
+    { text: '36º 00\' 36.4\'\' S 002º 20\' 54.8\'\' W', value: 'fromDegreeMinutesSeconds' },
+    { text: '36º 00.607\' S 002º 20.914\' W', value: 'fromDegreeMinutes' }
   ]
 
   const formatsOutput = [
-    { text: 'Unix Timestamp (Seconds)', value: 'X' },
-    { text: 'YYYY-MM-DD', value: 'YYYY-MM-DD' },
-    { text: 'DD-MM-YYYY', value: 'DD-MM-YYYY' },
-    { text: 'DD/MM/YYYY hh:mm:ss', value: 'DD/MM/YYYY hh:mm:ss' },
-    { text: 'ISO 8601', value: null }
+    { text: '27° 43′ 31.796″ N 18° 1′ 27.484″ W (DMS – degrees minutes seconds)', value: 'FFf' },
+    { text: '27° 43.529933333333′ N -18° 1.4580666666667′ W (degrees decimal minutes)', value: 'Ff' },
+    { text: '27.725499° N 18.024301° W (decimal degrees)', value: 'f' },
+    { text: '27.725499 18.024301 (decimal degrees)', value: 'd' }
   ]
 
   export default {
@@ -56,12 +55,15 @@
       compiledList: function () {
         const { input, iFormat, oFormat } = this
 
-        if (isNull(input) || input.length === 0 || isNull(iFormat)) {
+        if (isNull(input) || input.length === 0 || isNull(iFormat) || isNull(oFormat)) {
           return []
         }
 
+        console.log(oFormat)
+
         return convertList(input, line => {
-          return moment(line, iFormat).format(oFormat)
+          const coords = parseDMS(line)
+          return formatcoords([coords.lat, coords.lon]).format(oFormat)
         })
       }
     },

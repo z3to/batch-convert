@@ -35,18 +35,22 @@
     methods: {
       updateIFormat: function (value) {
         this.iFormat = value
-        this.$emit('updateIFormat', value)
       },
       updateOFormat: function (value) {
         this.oFormat = value
-        this.$emit('updateOFormat', value)
       }
     },
-    created () {
+    watch: {
+      iFormat: function () {
+        this.$emit('updateIFormat', this.iFormat)
+      },
+      oFormat: function () {
+        this.$emit('updateOFormat', this.oFormat)
+      }
+    },
+    mounted () {
       this.iFormat = first(this.iFormats).value
       this.oFormat = first(this.oFormats).value
-      this.$emit('updateOFormat', this.iFormat)
-      this.$emit('updateIFormat', this.oFormat)
     }
   }
 </script>
