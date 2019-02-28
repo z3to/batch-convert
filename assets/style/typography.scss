@@ -1,31 +1,7 @@
-a, .nuxt-link-active {
-	color: #222;
-
-	&:hover, &:focus {
-    text-decoration: underline;
-  }
-}
-
-p a {
-	text-decoration: underline;
-}
-
-.btn {
-	display: block;
-	background-color: #eee;
-	padding: $spacing / 2 $spacing;
-
-	&:hover, &:focus {
-    background-color: #aaa;
-  }
-}
-
-p em {
-	font-family: serif;
-}
-
-sup {
-	font-size: 0.7em;
+input, textarea {
+  font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  letter-spacing: 0.05em;
+  font-size: 0.85em;
 }
 
 h1 {
@@ -46,8 +22,20 @@ h3 {
 	margin-bottom: $spacing / 3;
 }
 
-aside span {
-	font-size: 0.8rem;
-	text-transform: uppercase;
-	letter-spacing: 0.05em;
+h1, h2, textarea {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+label, button {
+  word-spacing: 0.05em;
+}
+
+a {
+  text-decoration: none;
+  color: #42b983;
+
+  &:hover, &:focus, &:active {
+    color: darken(#42b983, 10%);
+  }
 }

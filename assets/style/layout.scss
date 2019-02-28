@@ -1,4 +1,5 @@
 .page-io, .page-options {
 	width: 100%;
 	@include grid-basic(2);
+	margin: $spacing 0;
 }

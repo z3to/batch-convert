@@ -33,31 +33,12 @@ a, .clickable {
   margin: 0;
 }
 
-nav li, nav ol {
+input, textarea, label, button {
+  border: none;
+  resize: none;
+  outline: none;
+  box-sizing: border-box;
   display: inline-block;
-}
-
-figure > img {
-  display: block;
-  width: 100%;
-}
-
-table {
-  width: 100%;
-  border-spacing: 0;
-  border-collapse: separate;
-
-  tr, td, th {
-    padding: 0;
-    margin: 0;
-  }
-}
-
-.page-enter-active, .page-leave-active {
-  transition: opacity .2s;
-}
-.page-enter, .page-leave-to {
-  opacity: 0;
 }
 
 @import
