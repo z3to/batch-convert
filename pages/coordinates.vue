@@ -1,8 +1,8 @@
 <template>
   <div class="page-wrapper">
     <header class="page-header">
-      <a href="http://convert.zeto.io/time" rel="self"><h1>Timestamp Converter</h1></a>
-      <p>Put in a list of dates separated by linebreaks. You can change the input and output format manually or select from the examples. Tokens are similar to the LDML format. A list of available tokens can be found here: <a href="http://momentjs.com/docs/#/displaying/format/">momentjs.com/docs/#/displaying/format</a></p>
+      <a href="http://convert.zeto.io/coordinates" rel="self"><h1>Geographic Coordinate Converter</h1></a>
+      <p>Put a list of geographic coordinates separated by linebreaks in the left textarea and copy the converted coordinates form the right textarea. You can change the format of the output format with some options.</p>
     </header>
     <Options
       :iFormats="formatsInput"
