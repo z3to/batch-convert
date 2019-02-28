@@ -1,0 +1,17 @@
+@mixin center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin grid-basic($columns) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-column-gap: 0.5vw;
+}
+
+@mixin media-query($device) {
+  @media screen and (min-width: $device) {
+    @content;
+  }
+}

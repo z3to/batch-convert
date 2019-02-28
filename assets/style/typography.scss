@@ -1,0 +1,53 @@
+a, .nuxt-link-active {
+	color: #222;
+
+	&:hover, &:focus {
+    text-decoration: underline;
+  }
+}
+
+p a {
+	text-decoration: underline;
+}
+
+.btn {
+	display: block;
+	background-color: #eee;
+	padding: $spacing / 2 $spacing;
+
+	&:hover, &:focus {
+    background-color: #aaa;
+  }
+}
+
+p em {
+	font-family: serif;
+}
+
+sup {
+	font-size: 0.7em;
+}
+
+h1 {
+	font-size: 3rem;
+	line-height: 1.2;
+	margin-bottom: $spacing / 2;
+}
+
+h2 {
+	font-size: 1rem;
+	margin: 0;
+}
+
+h3 {
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	margin-bottom: $spacing / 3;
+}
+
+aside span {
+	font-size: 0.8rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
