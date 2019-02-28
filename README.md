@@ -1,10 +1,7 @@
-# Data Visualisation Meetup Berlin
+# Batch Converter
 
-List of people, institutions, … that are related to data visualisation and located in Berlin.
-
-Maintained by [Jonas Parnow](https://jonasparnow.de) ([@zeto](https://twitter.com/zeto))
-
-https://datavis.berlin/
+https://batch-convert.netlify.com/
+https://batch-convert.netlify.com/coordinates/
 
 ## Build Setup
 
