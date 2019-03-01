@@ -41,6 +41,15 @@ label, button {
   word-spacing: 0.05em;
 }
 
+.page-options p {
+	font-size: 0.8rem;
+	padding: 10px 0;
+
+	strong {
+		color: #435CC9;
+	}
+}
+
 a {
   text-decoration: none;
   color: #435CC9;

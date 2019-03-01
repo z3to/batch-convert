@@ -7,7 +7,7 @@
     <aside class="page-options">
       <section>
         <h2>Input</h2>
-        <p>Paste in the order latitude—longitude if providing no hemisphere letters. Format can be quite freely choosen.</p>
+        <p>Paste in the order <strong>latitude, longitude</strong> if providing no hemisphere letters. Format can be quite freely choosen.</p>
         <small>Input is parsed by <a href="https://github.com/gmaclennan/parse-dms">parse-dms</a>. See their <a href="https://github.com/gmaclennan/parse-dms#usage">documentation</a> for more information.</small>
       </section>
       <Option
