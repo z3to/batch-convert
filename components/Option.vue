@@ -102,7 +102,7 @@
 
       input {
         grid-column: 2 / 4;
-        padding: 10px 5px;
+        padding: 10px 0;
         background-color: transparent;
         width: 100%;
         display: block;
