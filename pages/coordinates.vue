@@ -37,9 +37,9 @@
   const formatsOutput = [
     { text: 'DMS – degrees minutes seconds', sample: '27° 43′ 31.796″ N 18° 1′ 27.484″ W', value: 'FFf' },
     { text: 'DMS – degrees minutes seconds', sample: '27° 43\' 31.796\'\' N 18° 1\' 27.484\'\' W', value: 'DD M\' s\'\'' },
-    { text: 'degrees decimal minutes', sample: '27° 43.52993′ N -18° 1.45806′ W', value: 'Ff' },
-    { text: 'decimal degrees', sample: '27.725499° N 18.024301° W', value: 'f' },
-    { text: 'decimal degrees', sample: '27.725499 18.024301', value: 'd' }
+    { text: 'Degrees decimal minutes', sample: '27° 43.52993′ N -18° 1.45806′ W', value: 'Ff' },
+    { text: 'DD – Decimal degrees', sample: '27.725499° N 18.024301° W', value: 'f' },
+    { text: 'DD – Decimal degrees', sample: '27.725499 18.024301', value: 'd' }
   ]
 
   export default {
