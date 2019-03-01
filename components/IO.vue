@@ -34,7 +34,7 @@
   textarea {
     min-height: 500px;
     max-height: 80vh;
-    background-color: #f8f8f8;
+    background-color: #F8F9FC;
     padding: 20px;
   }
 
