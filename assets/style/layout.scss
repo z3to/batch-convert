@@ -1,3 +1,7 @@
+.page-content {
+	@include center();
+}
+
 .page-io, .page-options {
 	width: 100%;
 	@include grid-basic(2);
