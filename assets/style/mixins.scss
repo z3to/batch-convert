@@ -7,7 +7,7 @@
 @mixin grid-basic($columns) {
   display: grid;
   grid-template-columns: repeat($columns, 1fr);
-  grid-column-gap: 0.5vw;
+  grid-column-gap: 2vw;
 }
 
 @mixin media-query($device) {

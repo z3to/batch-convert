@@ -23,7 +23,7 @@ html {
   background-color: #fff;
 }
 
-a, .clickable {
+a, .clickable:not(.active) {
   text-decoration: none;
   cursor: pointer;
 }
@@ -43,5 +43,6 @@ input, textarea, label, button {
 
 @import
   "typography",
-  "layout"
+  "layout",
+  "icons"
 ;

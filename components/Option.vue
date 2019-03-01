@@ -1,23 +1,39 @@
 <template>
-  <label>{{ label }}:
-    <input v-model="format" spellcheck="false" />
-    <section>
-      Examples:
-      <button v-for="option in formats" @click="updateFormat(option.value)">
-        {{ option.text }}
-      </button>
-    </section>
-  </label>
+  <section>
+    <h2>{{ label }}</h2>
+    <ul>
+      <li v-for="option in formats" @click="updateFormat(option.value)" :class="{ clickable: true, active: format === option.value }">
+        <i :class="format === option.value ? 'icon-circle' : 'icon-circle-thin'" />
+        <strong>{{ option.text }}</strong>
+        <span>{{ option.sample }}</span>
+      </li>
+      <li :class="{ active: isCustom }">
+        <i :class="isCustom ? 'icon-circle' : 'icon-circle-thin'" />
+        <input v-model="format" spellcheck="false" />
+      </li>
+    </ul>
+    <small>
+      <slot />
+    </small>
+  </section>
 </template>
 
 <script>
   import first from 'lodash/first'
+  import map from 'lodash/map'
+  import includes from 'lodash/includes'
 
   export default {
     props: ['label', 'formats'],
     data: function () {
       return {
         format: null
+      }
+    },
+    computed: {
+      isCustom: function () {
+        const { format, formats } = this
+        return !includes(map(formats, 'value'), format)
       }
     },
     methods: {
@@ -39,31 +55,76 @@
 <style lang="scss" scoped>
   @import "~@/assets/style/global";
 
-  input {
-    margin: 0 20px;
-    padding: 5px 5px;
-    border: 1px solid #ddd;
-    transition: all 0.2s;
-    color: #555;
+  ul {
+    list-style: none;
+    margin-bottom: $spacing / 2;
 
-    &:focus {
-      border: 1px solid lighten(#e96900, 20%);
-      color: #000;
-    }
-  }
+    li {
+      padding: 0;
+      display: block;
+      background-color: #FFFFFF;
+      border-bottom: 1px solid #F1F2F6;
+      font-size: 0.8rem;
+      display: grid;
+      grid-template-columns: 35px repeat(2, 1fr);
+      width: 100%;
+      padding: 10px 0;
+      line-height: 1.3rem;
 
-  button {
-    border: 0;
-    color: #42b983;
-    font-size: 0.8em;
-    background-color: #fafafa;
-    cursor: pointer;
-    padding: 4px;
-    margin: 2px;
-    border-radius: 2px;
+      span, i {
+        color: #aaa;
+        font-size: 0.9em;
+      }
 
-    &:hover, &:focus, &:active {
-      color: darken(#42b983, 10%);
+      i {
+        margin-left: $spacing / 4;
+      }
+
+      &.active {
+        &, & i, & span {
+          color: #435CC9;
+        }
+
+        i {
+          opacity: 0.8;
+        }
+
+        input {
+          color: #435CC9;
+          font-weight: 700;
+        }
+      }
+
+      &:hover:not(.active) {
+        background-color: #FBFCFE;
+        color: #000;
+      }
+
+      input {
+        grid-column: 2 / 4;
+        padding: 10px 5px;
+        background-color: transparent;
+        width: 100%;
+        display: block;
+        margin: 0;
+        transition: all 0.2s;
+        color: #555;
+        font-size: 0.8rem;
+
+        &:focus {
+          color: #435CC9;
+        }
+      }
+
+      &:last-child {
+        border: 0;
+        padding: 0;
+        background-color: #F8F9FC;
+
+        i {
+          padding: 10px 0;
+        }
+      }
     }
   }
 
