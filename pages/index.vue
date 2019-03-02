@@ -18,6 +18,12 @@
             <p>Batch convert a list of geographic coordinates like DMS or DD into custom formatted strings.</p>
           </n-link>
         </li>
+        <li>
+          <n-link to="/text">
+            <h2>Text Format Converter</h2>
+            <p>Batch convert a list of strings into common formats like camelcase, titlecase or trimed.</p>
+          </n-link>
+        </li>
       </ul>
     </nav>
   </div>

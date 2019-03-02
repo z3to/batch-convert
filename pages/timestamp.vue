@@ -1,5 +1,6 @@
 <template>
   <div class="page-wrapper">
+    <span class="back"><n-link to="/">Back to overview</n-link></span>
     <header class="page-header">
       <a href="http://convert.zeto.io/time" rel="self"><h1>Timestamp Converter</h1></a>
       <p>Put in a list of dates separated by linebreaks. You can change the input and output format manually or select from the examples. Tokens are similar to the LDML format. A list of available tokens can be found here: <a href="http://momentjs.com/docs/#/displaying/format/">momentjs.com/docs/#/displaying/format</a></p>
