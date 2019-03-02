@@ -28,22 +28,24 @@
   import moment from 'moment'
   import isNull from 'lodash/isNull'
 
-  const sample = '12.08.2015 12:34:56\n12.08.2015'
+  const sample = '16.08.2015 12:34:56\n16.08.2015\n2015-08-12T12:34:56+02:00'
 
   const formatsInput = [
-    { text: 'DD.MM.YYYY', value: 'DD.MM.YYYY' },
-    { text: 'MM.DD.YYYY', value: 'MM.DD.YYYY' },
-    { text: 'MM.DD.YY', value: 'MM.DD.YY' },
-    { text: 'YYYY.MM.DD', value: 'YYYY.MM.DD' },
-    { text: 'DD.MM.YYYY hh:mm:ss', value: 'DD.MM.YYYY hh:mm:ss' }
+    { text: 'DD.MM.YYYY', sample: '16.08.2015', value: 'DD.MM.YYYY' },
+    { text: 'MM.DD.YYYY', sample: '08.16.2015', value: 'MM.DD.YYYY' },
+    { text: 'MM.DD.YY', sample: '08.16.15', value: 'MM.DD.YY' },
+    { text: 'YYYY.MM.DD', sample: '2015.08.16', value: 'YYYY.MM.DD' },
+    { text: 'DD.MM.YYYY hh:mm:ss', sample: '16.08.2015 12:34:56', value: 'DD.MM.YYYY hh:mm:ss' },
+    { text: 'ISO 8601', sample: '2015-08-12T12:34:56+06:00', value: null }
   ]
 
   const formatsOutput = [
-    { text: 'Unix Timestamp (Seconds)', value: 'X' },
-    { text: 'YYYY-MM-DD', value: 'YYYY-MM-DD' },
-    { text: 'DD-MM-YYYY', value: 'DD-MM-YYYY' },
-    { text: 'DD/MM/YYYY hh:mm:ss', value: 'DD/MM/YYYY hh:mm:ss' },
-    { text: 'ISO 8601', value: null }
+    { text: 'Unix Timestamp (Seconds)', sample: '1439661600', value: 'X' },
+    { text: 'YYYY-MM-DD', sample: '2015-08-16', value: 'YYYY-MM-DD' },
+    { text: 'DD-MM-YYYY', sample: '16-08-2015', value: 'DD-MM-YYYY' },
+    { text: 'DD/MM/YYYY hh:mm:ss', sample: '16.08.2015 12:34:56', value: 'DD/MM/YYYY hh:mm:ss' },
+    { text: 'Weekday', sample: 'Tuesday', value: 'dddd' },
+    { text: 'ISO 8601', sample: '2015-08-12T12:34:56+06:00', value: null }
   ]
 
   export default {
@@ -61,7 +63,7 @@
       compiledList: function () {
         const { input, iFormat, oFormat } = this
 
-        if (isNull(input) || input.length === 0 || isNull(iFormat)) {
+        if (isNull(input) || input.length === 0) {
           return []
         }
 
