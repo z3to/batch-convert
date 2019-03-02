@@ -28,7 +28,7 @@
   import moment from 'moment'
   import isNull from 'lodash/isNull'
 
-  const sample = '12.08.2015\n12.08.1015'
+  const sample = '12.08.2015 12:34:56\n12.08.2015'
 
   const formatsInput = [
     { text: 'DD.MM.YYYY', value: 'DD.MM.YYYY' },
