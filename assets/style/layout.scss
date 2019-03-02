@@ -2,6 +2,12 @@
 	@include center();
 }
 
+.page-wrapper {
+  width: calc(100vw - #{$spacing * 2});
+  max-width: 1120px;
+  margin: $spacing;
+}
+
 .page-io, .page-options {
 	width: 100%;
 	@include grid-basic(2);

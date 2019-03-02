@@ -1,7 +1,7 @@
 <template>
   <div class="page-wrapper">
     <header class="page-header">
-      <a href="http://convert.zeto.io/coordinates" rel="self"><h1>Geographic Coordinate Converter</h1></a>
+      <a href="http://convert.zeto.io/coordinates" rel="self"><h1>Geographic Coordinates Converter</h1></a>
       <p>Put a list of geographic coordinates separated by linebreaks in the left textarea and copy the converted coordinates form the right textarea. You can change the format of the output format with some options.</p>
     </header>
     <aside class="page-options">
@@ -75,9 +75,4 @@
 <style lang="scss" scoped>
   @import "~@/assets/style/global";
 
-  .page-wrapper {
-    width: calc(100vw - #{$spacing * 2});
-    max-width: 1120px;
-    margin: $spacing;
-  }
 </style>

@@ -128,9 +128,4 @@
 <style lang="scss" scoped>
   @import "~@/assets/style/global";
 
-  .page-wrapper {
-    width: calc(100vw - #{$spacing * 2});
-    max-width: 1120px;
-    margin: $spacing;
-  }
 </style>
