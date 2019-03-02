@@ -1,6 +1,7 @@
 <template>
   <div class="page-wrapper">
     <header class="page-header">
+      <span class="back"><n-link to="/">Back to overview</n-link></span>
       <a href="http://convert.zeto.io/coordinates" rel="self"><h1>Geographic Coordinates Converter</h1></a>
       <p>Put a list of geographic coordinates separated by linebreaks in the left textarea and copy the converted coordinates form the right textarea. You can change the format of the output format with some options.</p>
     </header>
@@ -35,11 +36,11 @@
   const sample = 'N51° 30\' 0.5486" W0° 7\' 34.4503"\n51°30\'0.5486" -0°7\'34.4503"\n0°7\'34.4503"W 51°30\'0.5486"N\n51:30:0.5486N 0:7:34.4503W\nN51° 30\' 0.5486\'\' W0° 7\' 34.4503\'\'\nN51° 30.009143333333\' W0° 7.574171666666667\'\n51.500152388888885,-0.12623619444444445\n51.500152388888885 -0.12623619444444445'
 
   const formatsOutput = [
-    { text: 'DD – Decimal degree', sample: '27.725499 18.024301', value: 'd' },
-    { text: 'DD – Decimal degree alt', sample: '27.725499° N 18.024301° W', value: 'f' },
-    { text: 'DMS – deg min sec', sample: '27° 43′ 31.796″ N 18° 1′ 27.484″ W', value: 'FFf' },
-    { text: 'DMS – deg min sec alt', sample: '27° 43\' 31.796\'\' N 18° 1\' 27.484\'\' W', value: 'DD M\' s\'\' X' },
-    { text: 'Deg decimal minute', sample: '27° 43.52993′ N -18° 1.45806′ W', value: 'Ff' }
+    { text: 'DD – Decimal degree', sample: '51.50015 0.12624', value: 'd' },
+    { text: 'DD – Decimal degree alt', sample: '51.50015° N 0.12624° W', value: 'f' },
+    { text: 'DMS – deg min sec', sample: '51° 30′ 0.54860″ N 0° 7′ 34.45030″ W', value: 'FFf' },
+    { text: 'DMS – deg min sec alt', sample: '51° 30\' 0.54860\'\' N 0° 7\' 34.45030\'\' W', value: 'DD M\' s\'\' X' },
+    { text: 'Deg decimal minute', sample: '51° 30.00914′ N 0° 7.57417′ W', value: 'Ff' }
   ]
 
   export default {

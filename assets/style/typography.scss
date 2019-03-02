@@ -22,7 +22,7 @@ label {
 }
 
 h3 {
-	font-size: 0.8rem;
+	font-size: 0.85rem;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 	margin-bottom: $spacing / 3;
@@ -32,9 +32,12 @@ small {
 	font-size: 0.7rem;
 }
 
+h1, h2, textarea, label, p {
+  color: #2c3e50;
+}
+
 h1, h2, textarea, label {
   font-weight: 600;
-  color: #2c3e50;
 }
 
 label, button {
@@ -42,7 +45,7 @@ label, button {
 }
 
 .page-options p {
-	font-size: 0.8rem;
+	font-size: 0.85rem;
 	padding: 10px 0;
 
 	strong {
@@ -50,7 +53,14 @@ label, button {
 	}
 }
 
-a, a h2 {
+.back {
+	color: #aaa;
+	font-size: 0.85rem;
+	margin-bottom: $spacing / 2;
+	display: block;
+}
+
+a {
   text-decoration: none;
   color: #435CC9;
 
