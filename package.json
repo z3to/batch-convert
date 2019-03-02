@@ -21,6 +21,7 @@
     "moment": "^2.24.0",
     "nuxt": "^2.4.5",
     "parse-dms": "0.0.3",
+    "string-fn": "^2.2.0",
     "v-tooltip": "^2.0.0-rc.33"
   },
   "devDependencies": {
