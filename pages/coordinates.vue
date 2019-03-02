@@ -35,11 +35,11 @@
   const sample = 'N51° 30\' 0.5486" W0° 7\' 34.4503"\n51°30\'0.5486" -0°7\'34.4503"\n0°7\'34.4503"W 51°30\'0.5486"N\n51:30:0.5486N 0:7:34.4503W\nN51° 30\' 0.5486\'\' W0° 7\' 34.4503\'\'\nN51° 30.009143333333\' W0° 7.574171666666667\'\n51.500152388888885,-0.12623619444444445\n51.500152388888885 -0.12623619444444445'
 
   const formatsOutput = [
-    { text: 'DD – Dec deg', sample: '27.725499 18.024301', value: 'd' },
-    { text: 'DD – Dec deg alt', sample: '27.725499° N 18.024301° W', value: 'f' },
+    { text: 'DD – Decimal degree', sample: '27.725499 18.024301', value: 'd' },
+    { text: 'DD – Decimal degree alt', sample: '27.725499° N 18.024301° W', value: 'f' },
     { text: 'DMS – deg min sec', sample: '27° 43′ 31.796″ N 18° 1′ 27.484″ W', value: 'FFf' },
     { text: 'DMS – deg min sec alt', sample: '27° 43\' 31.796\'\' N 18° 1\' 27.484\'\' W', value: 'DD M\' s\'\' X' },
-    { text: 'Deg dec min', sample: '27° 43.52993′ N -18° 1.45806′ W', value: 'Ff' }
+    { text: 'Deg decimal minute', sample: '27° 43.52993′ N -18° 1.45806′ W', value: 'Ff' }
   ]
 
   export default {
