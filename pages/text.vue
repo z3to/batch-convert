@@ -31,34 +31,28 @@
   import isNull from 'lodash/isNull'
 
   import { titleCase, camelCase, kebabCase, constantCase, dotCase, seoTitle, trim, pascalCase, snakeCase } from 'string-fn'
-  import toLower from 'lodash/toLower'
-  import toUpper from 'lodash/toUpper'
-  import startCase from 'lodash/startCase'
-  import escape from 'lodash/escape'
-  import deburr from 'lodash/deburr'
-  import capitalize from 'lodash/capitalize'
-  import { trim as tr } from 'lodash'
+  import { toLower, toUpper, startCase, escape, deburr, capitalize, trim as tr } from 'lodash'
 
-  const sample = 'Lórem ipsum dolor sit åmet\nconsetetur sadipscing elitr\nsed diam   nonumy eirmod\n tempor invidunt ut labore  '
+  const sample = 'Côte d’Ivoire\nLove & Peace\nthe lord of the rings\n lorem ipsum   dolor sit amet  '
 
   const formatsOutput = [
-    { text: 'Uppercase', sample: 'LOREM IPSUM', value: 'up' },
-    { text: 'Lowercase', sample: 'lorem ipsum', value: 'low' },
-    { text: 'Titlecase', sample: 'Lorem Ipsum', value: 'title' },
-    { text: 'Camelcase', sample: 'LoremIpsum', value: 'camel' },
-    { text: 'Kebabcase/Slugify/Classcase', sample: 'lorem-ipsum', value: 'kebab' },
-    { text: 'Constantcase', sample: 'lorem-ipsum', value: 'constant' },
-    { text: 'Dotcase', sample: 'lorem-ipsum', value: 'dot' },
-    { text: 'Pascalcase', sample: 'lorem-ipsum', value: 'pascal' },
-    { text: 'Snakecase', sample: 'lorem-ipsum', value: 'snake' },
-    { text: 'Startcase', sample: 'lorem-ipsum', value: 'start' },
-    { text: 'SEO Title', sample: 'lorem-ipsum', value: 'seo' },
-    { text: 'Trim spaces', sample: 'Lorem ipsum', value: 'trim' },
-    { text: 'Trim and multiple spaces', sample: 'Lorem ipsum', value: 'spaces' },
-    { text: 'Escape', sample: 'Lorem ipsum', value: 'escape' },
-    { text: 'Deburr', sample: 'Lorem ipsum', value: 'deburr' },
-    { text: 'Capitalize', sample: 'Lorem ipsum', value: 'capitalize' },
-    { text: 'Double', sample: 'Lorem ipsum Lorem ipsum', value: '$value $value' }
+    { text: 'Uppercase', sample: 'CÔTE D’IVOIRE', description: 'Converts string, as a whole, to upper case just like String#toUpperCase.', value: 'up' },
+    { text: 'Lowercase', sample: 'côte d’ivoire', description: 'Converts string, as a whole, to lower case just like String#toLowerCase.', value: 'low' },
+    { text: 'Titlecase', sample: 'C Te D Ivoire', description: 'It converts a string to title case string.', value: 'title' },
+    { text: 'Camelcase', sample: 'cTeDIvoire', description: 'It converts a string to camel case string.', value: 'camel' },
+    { text: 'Kebabcase/Slugify/Classcase', sample: 'c-te-d-ivoire', description: 'It converts a string to kebab case string.', value: 'kebab' },
+    { text: 'Constantcase', sample: 'C_TE_D_IVOIRE', description: 'It converts a string to constant case string.', value: 'constant' },
+    { text: 'Dotcase', sample: 'c.te.d.ivoire', description: 'It converts a string to dot case string.', value: 'dot' },
+    { text: 'Pascalcase', sample: 'CTeDIvoire', description: 'It converts a string to pascal case string.', value: 'pascal' },
+    { text: 'Snakecase', sample: 'c_te_d_ivoire', description: 'It converts a string to snake case string.', value: 'snake' },
+    { text: 'Startcase', sample: 'Cote D Ivoire', description: 'Converts string to start case.', value: 'start' },
+    { text: 'SEO Title', sample: 'C te d Ivoire', description: 'Capitalize each word of str as long as word’s length is higher or equal to 3. First word is always capitalized.', value: 'seo' },
+    { text: 'Trim spaces', sample: 'lorem ipsum &nbsp; dolor sit amet', description: 'Removes leading and trailing whitespace or specified characters from string.', value: 'trim' },
+    { text: 'Trim and multiple spaces', sample: 'lorem ipsum dolor sit amet', description: 'It trims str and turns multiple whitespace to single whitespace.', value: 'spaces' },
+    { text: 'Escape', sample: 'Love &amp;amp; Peace', description: 'Converts the characters "&", "<", ">", \'"\', and "\'" in string to their corresponding HTML entities.', value: 'escape' },
+    { text: 'Deburr', sample: 'Cote d’Ivoire', description: 'Deburrs string by converting Latin-1 Supplement and Latin Extended-A letters to basic Latin letters and removing combining diacritical marks.', value: 'deburr' },
+    { text: 'Capitalize', sample: 'The lord of the rings', description: 'Converts the first character of string to upper case and the remaining to lower case.', value: 'capitalize' },
+    { text: 'Double', sample: 'Côte d’Ivoire Côte d’Ivoire', description: 'Print the string twice.', value: '$value $value' }
   ]
 
   export default {

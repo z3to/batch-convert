@@ -2,10 +2,13 @@
   <section>
     <h2>{{ label }}</h2>
     <ul>
-      <li v-for="option in formats" @click="updateFormat(option.value)" :class="{ clickable: true, active: format === option.value }">
+      <li
+        v-for="option in formats" @click="updateFormat(option.value)"
+        :class="{ clickable: true, active: format === option.value }"
+        v-tooltip="option.description">
         <i :class="format === option.value ? 'icon-circle' : 'icon-circle-thin'" />
         <strong>{{ option.text }}</strong>
-        <span>{{ option.sample }}</span>
+        <span v-html="option.sample" />
       </li>
       <li :class="{ active: isCustom }">
         <i :class="isCustom ? 'icon-circle' : 'icon-circle-thin'" />
@@ -19,9 +22,10 @@
 </template>
 
 <script>
-  import first from 'lodash/first'
-  import map from 'lodash/map'
-  import includes from 'lodash/includes'
+  import Vue from 'vue'
+  import VTooltip from 'v-tooltip'
+  import { first, map, includes } from 'lodash'
+  Vue.use(VTooltip)
 
   export default {
     props: ['label', 'formats'],

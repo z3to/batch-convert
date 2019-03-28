@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import debounce from 'lodash/debounce'
+  import { debounce } from 'lodash'
 
   export default {
     props: ['compiledList', 'sample'],
