@@ -1,7 +1,10 @@
 # Batch Converter
 
-https://batch-convert.netlify.com/
-https://batch-convert.netlify.com/coordinates/
+- https://batch-convert.netlify.com/
+- https://convert.zeto.io/
+- https://convert.zeto.io/timestamp
+- https://convert.zeto.io/coordinates
+- https://convert.zeto.io/text
 
 ## Build Setup
 
